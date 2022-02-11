@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#548C8C"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".TambahPesertaActivity">
+
+    <TextView
+        android:id="@+id/judul_tambah_peserta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Peserta"
+        android:textColor="#CFF3F1"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/tambah_nama_peserta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nama Peserta"
+        android:inputType="textPersonName"
+        android:textColorHint="#CFF3F1" />
+
+    <EditText
+        android:id="@+id/tambah_email_peserta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail Peserta"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#CFF3F1" />
+
+    <EditText
+        android:id="@+id/tambah_hp_peserta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="No. HP Peserta"
+        android:inputType="phone"
+        android:textColorHint="#CFF3F1" />
+
+    <EditText
+        android:id="@+id/tambah_instansi_peserta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Asal Instansi Peserta"
+        android:inputType="textPersonName"
+        android:textColorHint="#CFF3F1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_simpan_peserta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Simpan Peserta"
+            android:textColor="#209EBD" />
+
+        <Button
+            android:id="@+id/btn_lihat_peserta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lihat Peserta"
+            android:textColor="#209EBD" />
+    </LinearLayout>
+</LinearLayout>
