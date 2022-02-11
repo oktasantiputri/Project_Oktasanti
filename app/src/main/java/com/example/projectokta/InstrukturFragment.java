@@ -1,64 +1,131 @@
 package com.example.projectokta;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InstrukturFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class InstrukturFragment extends Fragment {
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-    public InstrukturFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InstrukturFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static InstrukturFragment newInstance(String param1, String param2) {
-        InstrukturFragment fragment = new InstrukturFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+public class InstrukturFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener {
+    ListView listViewinstruktur;
+    FloatingActionButton btn_tambah_instruktur;
+    private String JSON_STRING;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instruktur, container, false);
+        View view = inflater.inflate(R.layout.fragment_instruktur, container, false);
+
+        listViewinstruktur = view.findViewById(R.id.listViewInstruktur);
+        listViewinstruktur.setOnItemClickListener(this);
+        btn_tambah_instruktur = view.findViewById(R.id.btn_tambah_instruktur);
+        btn_tambah_instruktur.setOnClickListener(this);
+
+
+
+        getJSON();
+        return view;
+    }
+
+    private void getJSON()
+    {
+        class GetJSON extends AsyncTask<Void, Void, String>
+        {
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(getActivity(), "Mengambil Data",
+                        "Harap tunggu", false, false);
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                HttpHandler handler = new HttpHandler();
+                String hasil = handler.sendGetResponse(Konfigurasi.URL_GET_ALL_INSTRUKTUR);
+                return hasil;
+            }
+
+            @Override
+            protected void onPostExecute(String message) {
+                super.onPostExecute(message);
+                loading.dismiss();
+                JSON_STRING = message;
+                Log.d("Data JSON: ", JSON_STRING);
+
+                displayAllDataInstruktur();
+            }
+        }
+        GetJSON getJSON = new GetJSON();
+        getJSON.execute();
+    }
+
+    private void displayAllDataInstruktur()
+    {
+        JSONObject jsonObject = null;
+        ArrayList<HashMap<String, String>> list = new ArrayList<>();
+
+        try
+        {
+            jsonObject = new JSONObject(JSON_STRING);
+            JSONArray result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_INS_ARRAY);
+            Log.d("DATA_JSON: ", JSON_STRING);
+
+            for (int i = 0; i < result.length(); i++)
+            {
+                JSONObject object = result.getJSONObject(i);
+                String id_ins = object.getString(Konfigurasi.TAG_JSON_ID_INS);
+                String nama_ins = object.getString(Konfigurasi.TAG_JSON_NAMA_INS);
+
+                HashMap<String, String> instruktur = new HashMap<>();
+                instruktur.put(Konfigurasi.TAG_JSON_ID_INS, id_ins);
+                instruktur.put(Konfigurasi.TAG_JSON_NAMA_INS, nama_ins);
+                list.add(instruktur);
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        ListAdapter adapterIns = new SimpleAdapter(getActivity(), list, R.layout.list_detail_instruktur,
+                new String[]{Konfigurasi.TAG_JSON_ID_INS, Konfigurasi.TAG_JSON_NAMA_INS},
+                new int[]{R.id.txt_dis_id_instruktur, R.id.txt_dis_nama_instruktur});
+       listViewinstruktur.setAdapter(adapterIns);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long l)
+    {
+        Intent intent = new Intent(getActivity(), DetailInstrukturActivity.class);
+        HashMap<String, String> map = (HashMap) parent.getItemAtPosition(position);
+        String insId = map.get(Konfigurasi.TAG_JSON_ID_INS).toString();
+        intent.putExtra(Konfigurasi.INS_ID, insId);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        startActivity(new Intent(view.getContext(), TambahInstrukturActivity.class));
     }
 }

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ProjectOkta"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DetailInstrukturActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahInstrukturActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailPesertaActivity"
             android:exported="false" />
         <activity
