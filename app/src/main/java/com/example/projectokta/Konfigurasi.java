@@ -18,11 +18,11 @@ public class Konfigurasi
     public static final String URL_DELETE_INSTRUKTUR = "http://192.168.100.7/inixtraining/instruktur/tr_delete_instruktur.php?id_ins=";
 
     //MATERI
-    public static final String URL_GET_ALL_MATERI = "http://192.168.100.7/inixtraining/instruktur/tr_datas_instruktur.php";
-    public static final String URL_GET_DETAIL_MATERI = "http://192.168.100.7/inixtraining/instruktur/tr_detail_instruktur.php?id_mat=";
-    public static final String URL_ADD_MATERI = "http://192.168.100.7/inixtraining/instruktur/tr_add_instruktur.php";
-    public static final String URL_UPDATE_MATERI = "http://192.168.100.7/inixtraining/instruktur/tr_update_instruktur.php?id_mat=";
-    public static final String URL_DELETE_MATERI = "http://192.168.100.7/inixtraining/instruktur/tr_delete_instruktur.php?id_mat=";
+    public static final String URL_GET_ALL_MATERI = "http://192.168.100.7/inixtraining/materi/tr_datas_materi.php";
+    public static final String URL_GET_DETAIL_MATERI = "http://192.168.100.7/inixtraining/materi/tr_detail_materi.php?id_mat=";
+    public static final String URL_ADD_MATERI = "http://192.168.100.7/inixtraining/materi/tr_add_materi.php";
+    public static final String URL_UPDATE_MATERI = "http://192.168.100.7/inixtraining/materi/tr_update_materi.php?id_mat=";
+    public static final String URL_DELETE_MATERI = "http://192.168.100.7/inixtraining/materi/tr_delete_materi.php?id_mat=";
 
     // key and value JSON yang muncul di browser
     //PESERTA
@@ -62,8 +62,8 @@ public class Konfigurasi
 
     //MATERI
     public static final String TAG_JSON_MAT_ARRAY = "result";
-    public static final String TAG_JSON_ID_MAT = "id_ins";
-    public static final String TAG_JSON_NAMA_MAT = "nama_ins";
+    public static final String TAG_JSON_ID_MAT = "id_mat";
+    public static final String TAG_JSON_NAMA_MAT = "nama_mat";
 
 
 
