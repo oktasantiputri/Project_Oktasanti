@@ -24,6 +24,21 @@ public class Konfigurasi
     public static final String URL_UPDATE_MATERI = "http://192.168.100.7/inixtraining/materi/tr_update_materi.php?id_mat=";
     public static final String URL_DELETE_MATERI = "http://192.168.100.7/inixtraining/materi/tr_delete_materi.php?id_mat=";
 
+    //KELAS
+    public static final String URL_GET_ALL_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_datas_kelas.php";
+    public static final String URL_GET_DETAIL_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_detail_kelas.php?id_kls=";
+    public static final String URL_ADD_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_add_kelas.php";
+    public static final String URL_UPDATE_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_update_kelas.php?id_kls=";
+    public static final String URL_DELETE_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_delete_kelas.php?id_kls=";
+
+    //DETAIL KELAS
+    public static final String URL_GET_ALL_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_datas_detail_kelas.php";
+    public static final String URL_GET_DETAIL_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_detail_detail_kelas.php?id_detail_kls=";
+    public static final String URL_ADD_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_add_detail_kelas.php";
+    public static final String URL_UPDATE_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_update_detail_kelas.php?id_detail_kls=";
+    public static final String URL_DELETE_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_delete_detail_kelas.php?id_detail_kls=";
+
+
     // key and value JSON yang muncul di browser
     //PESERTA
     public static final String KEY_PST_ID = "id_pst";
@@ -38,10 +53,21 @@ public class Konfigurasi
     public static final String KEY_INS_EMAIL = "email_ins";
     public static final String KEY_INS_HP = "hp_ins";
 
-    //INSTRUKTUR
+    //MATERI
     public static final String KEY_MAT_ID = "id_mat";
     public static final String KEY_MAT_NAMA = "nama_mat";
-    ;
+
+    //KELAS
+    public static final String KEY_KLS_ID = "id_kls";
+    public static final String KEY_KLS_MULAI = "tgl_mulai_kls";
+    public static final String KEY_KLS_AKHIR = "tgl_akhir_kls";
+    public static final String KEY_ID_INS_KLS = "id_ins";
+    public static final String KEY_ID_MAT_KLS = "id_mat";
+
+    //DETAIL KELAS
+    public static final String KEY_DTKLS_ID = "id_detail_kelas";
+    public static final String KEY_DTKLS_IDKLS = "id_kls";
+    public static final String KEY_DTKLS_IDPST = "id_pst";
 
 
     // flag JSON
@@ -65,10 +91,24 @@ public class Konfigurasi
     public static final String TAG_JSON_ID_MAT = "id_mat";
     public static final String TAG_JSON_NAMA_MAT = "nama_mat";
 
+    //KELAS
+    public static final String TAG_JSON_KLS_ARRAY = "result";
+    public static final String TAG_JSON_ID_KLS = "id_kls";
+    public static final String TAG_JSON_MULAI_KLS = "tgl_mulai_kls";
+    public static final String TAG_JSON_AKHIR_KLS = "tgl_akhir_kls";
+    public static final String TAG_JSON_ID_INS_KLS = "id_ins";
+    public static final String TAG_JSON_ID_MAT_KLS = "id_mat";
 
+    //DETAIL KELAS
+    public static final String TAG_JSON_DT_KLS_ARRAY = "result";
+    public static final String TAG_JSON_ID_DTKLS = "id_detail_kls";
+    public static final String TAG_JSON_IDKLS_DTKLS = "id_kls";
+    public static final String TAG_JSON_IDPST_DTKLS = "id_pst";
 
     // variabel ID peserta
     public static final String PST_ID = "id_pst";
     public static final String INS_ID = "id_ins";
     public static final String MAT_ID = "id_mat";
+    public static final String KLS_ID = "id_kls";
+    public static final String DTKLS_ID = "id_detail_kls";
 }

@@ -30,7 +30,12 @@
         <item
             android:id="@+id/nav_kelas"
             android:icon="@drawable/ic_class"
-            android:title="kelas" />
+            android:title="Kelas" />
+
+        <item
+            android:id="@+id/nav_dtkelas"
+            android:icon="@drawable/ic_dtkelas"
+            android:title="Detail Kelas" />
     </group>
 
 </menu>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#548C8C"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".TambahKelasActivity">
+
+    <TextView
+        android:id="@+id/judul_tambah_Kelas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Kelas"
+        android:textColor="#CFF3F1"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/tambah_mulai_kls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tanggal Mulai Kelas"
+        android:inputType="date"
+        android:textColorHint="#CDCFF3F1" />
+
+    <EditText
+        android:id="@+id/tambah_akhir_kls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tanggal Akhir Kelas"
+        android:inputType="date"
+        android:textColorHint="#CDCFF3F1" />
+
+    <EditText
+        android:id="@+id/tambah_id_ins_kls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nomor ID Instruktur"
+        android:inputType="number"
+        android:textColorHint="#CDCFF3F1" />
+
+    <EditText
+        android:id="@+id/tambah_id_mat_kls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nomor ID Materi"
+        android:inputType="number"
+        android:textColorHint="#CDCFF3F1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_simpan_kls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Simpan Kelas"
+            android:textColor="#209EBD" />
+
+        <Button
+            android:id="@+id/btn_lihat_kls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="Lihat Kelas"
+            android:textColor="#209EBD" />
+    </LinearLayout>
+</LinearLayout>

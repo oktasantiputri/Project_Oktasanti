@@ -13,6 +13,18 @@
         android:theme="@style/Theme.ProjectOkta"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DetailDTKelasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahDetailKelasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahKelasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailKelasActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailMateriActivity"
             android:exported="false" />
         <activity

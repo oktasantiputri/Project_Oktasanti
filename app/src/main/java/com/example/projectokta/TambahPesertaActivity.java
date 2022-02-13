@@ -41,6 +41,22 @@ public class TambahPesertaActivity extends AppCompatActivity implements View.OnC
         }
         else if(view == btn_simpan_peserta)
         {
+            if(tambah_nama_peserta.getText().toString().length() == 0)
+            {
+                tambah_nama_peserta.setError("Masukan Nama Peserta!");
+            }
+            else if(tambah_email_peserta.getText().toString().length() == 0)
+            {
+                tambah_email_peserta.setError("Mauskan E-mail Peserta!");
+            }
+            else if(tambah_hp_peserta.getText().toString().length() == 0)
+            {
+                tambah_hp_peserta.setError("Masukan Nomor HP Peserta!");
+            }
+            else if(tambah_instansi_peserta.getText().toString().length() == 0)
+            {
+                tambah_instansi_peserta.setError("Masukan Asal Instansi Peserta");
+            }
             simpanPeserta();
         }
 

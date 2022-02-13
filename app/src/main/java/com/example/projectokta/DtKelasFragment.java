@@ -24,20 +24,21 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MateriFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener {
-    private FloatingActionButton btn_tambah_materi;
-    private ListView listViewMateri;
-    private String JSON_STRING;
+public class DtKelasFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener {
+    FloatingActionButton btn_tambah_dt_kelas;
+    ListView listViewDetailKelas;
+    String JSON_STRING;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_materi, container, false);
+        View view = inflater.inflate(R.layout.fragment_detail_kelas, container, false);
 
-        btn_tambah_materi = view.findViewById(R.id.btn_tambah_materi);
-        listViewMateri = view.findViewById(R.id.listViewMateri);
-        listViewMateri.setOnItemClickListener(this);
-        btn_tambah_materi.setOnClickListener(this);
+        listViewDetailKelas = view.findViewById(R.id.listViewDetailKelas);
+        btn_tambah_dt_kelas = view.findViewById(R.id.btn_tambah_dt_kelas);
+
+        listViewDetailKelas.setOnItemClickListener(this);
+        btn_tambah_dt_kelas.setOnClickListener(this);
 
         getJSON();
         return view;
@@ -59,7 +60,7 @@ public class MateriFragment extends Fragment implements View.OnClickListener, Ad
             @Override
             protected String doInBackground(Void... voids) {
                 HttpHandler handler = new HttpHandler();
-                String hasil = handler.sendGetResponse(Konfigurasi.URL_GET_ALL_MATERI);
+                String hasil = handler.sendGetResponse(Konfigurasi.URL_GET_ALL_DTKELAS);
                 return hasil;
             }
 
@@ -69,15 +70,15 @@ public class MateriFragment extends Fragment implements View.OnClickListener, Ad
                 loading.dismiss();
                 JSON_STRING = message;
                 Log.d("Data JSON: ", JSON_STRING);
+                displayDetailKelas();
 
-                displayDataMateri();
             }
         }
         GetJSON getJSON = new GetJSON();
         getJSON.execute();
     }
 
-    private void displayDataMateri()
+    private void displayDetailKelas()
     {
         JSONObject jsonObject = null;
         ArrayList<HashMap<String, String>> list = new ArrayList<>();
@@ -85,44 +86,42 @@ public class MateriFragment extends Fragment implements View.OnClickListener, Ad
         try
         {
             jsonObject = new JSONObject(JSON_STRING);
-            JSONArray result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_MAT_ARRAY);
+            JSONArray result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_DT_KLS_ARRAY);
             Log.d("DATA_JSON: ", JSON_STRING);
 
             for (int i = 0; i < result.length(); i++)
             {
                 JSONObject object = result.getJSONObject(i);
-                String id_mat = object.getString(Konfigurasi.TAG_JSON_ID_MAT);
-                String nama_mat = object.getString(Konfigurasi.TAG_JSON_NAMA_MAT);
+                String id_detail_kls = object.getString(Konfigurasi.TAG_JSON_ID_DTKLS);
+                String id_kls = object.getString(Konfigurasi.TAG_JSON_IDKLS_DTKLS);
+                String id_pst = object.getString(Konfigurasi.TAG_JSON_IDPST_DTKLS);
 
-                HashMap<String, String> materi = new HashMap<>();
-                materi.put(Konfigurasi.TAG_JSON_ID_MAT, id_mat);
-                materi.put(Konfigurasi.TAG_JSON_NAMA_MAT, nama_mat);
-                list.add(materi);
+
+                HashMap<String, String> dtkelas = new HashMap<>();
+                dtkelas.put(Konfigurasi.TAG_JSON_ID_DTKLS, id_detail_kls);
+                dtkelas.put(Konfigurasi.TAG_JSON_IDKLS_DTKLS, id_kls);
+                dtkelas.put(Konfigurasi.TAG_JSON_IDPST_DTKLS, id_pst);
+                list.add(dtkelas);
             }
         }
         catch(Exception e)
         {
             e.printStackTrace();
         }
-        ListAdapter adapterMat = new SimpleAdapter(getActivity(), list, R.layout.list_detail_materi,
-                new String[]{Konfigurasi.TAG_JSON_NAMA_MAT},
-                new int[]{R.id.txt_dis_nama_materi});
-                listViewMateri.setAdapter(adapterMat);
+        ListAdapter adapterDtKls = new SimpleAdapter(getActivity(), list, R.layout.list_detail_dtkelas,
+                new String[]{Konfigurasi.TAG_JSON_ID_DTKLS, Konfigurasi.TAG_JSON_IDKLS_DTKLS},
+                new int[]{R.id.txt_dis_id_dtkls, R.id.txt_dis_idkls_dtkls});
+        listViewDetailKelas.setAdapter(adapterDtKls);
     }
 
     @Override
-    public void onClick(View view) {
-        startActivity(new Intent(view.getContext(), TambahMateriActivity.class));
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+    public void onClick(View view)
     {
-        Intent intent = new Intent(getActivity(), DetailMateriActivity.class);
-        HashMap<String, String> map = (HashMap) parent.getItemAtPosition(position);
-        String matId = map.get(Konfigurasi.TAG_JSON_ID_MAT).toString();
-        intent.putExtra(Konfigurasi.MAT_ID, matId);
-        startActivity(intent);
+        startActivity(new Intent(view.getContext(), TambahDetailKelasActivity.class));
     }
 }
