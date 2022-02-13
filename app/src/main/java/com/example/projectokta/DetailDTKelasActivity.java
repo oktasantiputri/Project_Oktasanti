@@ -194,5 +194,4 @@ public class DetailDTKelasActivity extends AppCompatActivity implements View.OnC
         UpdateDataDetailKelas updateDataDetailKelas = new UpdateDataDetailKelas();
         updateDataDetailKelas.execute();
     }
-    }
 }
