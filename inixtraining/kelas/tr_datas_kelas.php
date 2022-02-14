@@ -15,6 +15,7 @@
 		
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
+			"id_kls"=>$row['id_kls'],
 			"tgl_mulai_kls"=>$row['tgl_mulai_kls'],
 			"tgl_akhir_kls"=>$row['tgl_akhir_kls'],
             "id_ins"=>$row['id_ins'],

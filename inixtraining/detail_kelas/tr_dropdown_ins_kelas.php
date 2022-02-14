@@ -3,7 +3,7 @@
 	require_once('../koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT id_kls, COUNT(id_pst) jum_pst FROM tb_detail_kelas GROUP BY id_kls";
+	$sql = "SELECT k.id_kls id_kls, CONCAT(k.tgl_mulai_kls, m.nama_mat) kls_info FROM tb_kelas k JOIN tb_materi m ON k.id_mat=m.id_mat";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -16,7 +16,7 @@
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
 			"id_kls"=>$row['id_kls'],
-			"jum_pst"=>$row['jum_pst']
+			"kls_info"=>$row['kls_info']
 		));
 	}
 	
