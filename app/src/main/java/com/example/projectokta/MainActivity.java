@@ -97,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
                                 binding.drawer.closeDrawer(GravityCompat.START);
                                 callFragment(fragment);
                                 break;
+                            case R.id.nav_caridata:
+                                fragment = new KelasFragment();
+                                getSupportActionBar().setTitle("Cari Data");
+                                binding.drawer.closeDrawer(GravityCompat.START);
+                                callFragment(fragment);
+                                break;
 
                         }
                         return true;

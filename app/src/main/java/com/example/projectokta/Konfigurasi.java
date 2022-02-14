@@ -4,40 +4,43 @@ public class Konfigurasi
 {
     // url dimana web API berada
     //PESERTA
-    public static final String URL_GET_ALL_PESERTA = "http://192.168.100.7/inixtraining/peserta/tr_datas_peserta.php";
-    public static final String URL_GET_DETAIL_PESERTA = "http://192.168.100.7/inixtraining/peserta/tr_detail_peserta.php?id_pst=";
-    public static final String URL_ADD_PESERTA = "http://192.168.100.7/inixtraining/peserta/tr_add_peserta.php";
-    public static final String URL_UPDATE_PESERTA = "http://192.168.100.7/inixtraining/peserta/tr_update_peserta.php?id_pst=";
-    public static final String URL_DELETE_PESERTA = "http://192.168.100.7/inixtraining/peserta/tr_delete_peserta.php?id_pst=";
+    public static final String URL_GET_ALL_PESERTA = "http://192.168.100.4/inixtraining/peserta/tr_datas_peserta.php";
+    public static final String URL_GET_DETAIL_PESERTA = "http://192.168.100.4/inixtraining/peserta/tr_detail_peserta.php?id_pst=";
+    public static final String URL_ADD_PESERTA = "http://192.168.100.4/inixtraining/peserta/tr_add_peserta.php";
+    public static final String URL_UPDATE_PESERTA = "http://192.168.100.4/inixtraining/peserta/tr_update_peserta.php?id_pst=";
+    public static final String URL_DELETE_PESERTA = "http://192.168.100.4/inixtraining/peserta/tr_delete_peserta.php?id_pst=";
 
     //INSTRUKTUR
-    public static final String URL_GET_ALL_INSTRUKTUR = "http://192.168.100.7/inixtraining/instruktur/tr_datas_instruktur.php";
-    public static final String URL_GET_DETAIL_INSTRUKTUR = "http://192.168.100.7/inixtraining/instruktur/tr_detail_instruktur.php?id_ins=";
-    public static final String URL_ADD_INSTRUKTUR = "http://192.168.100.7/inixtraining/instruktur/tr_add_instruktur.php";
-    public static final String URL_UPDATE_INSTRUKTUR = "http://192.168.100.7/inixtraining/instruktur/tr_update_instruktur.php?id_ins=";
-    public static final String URL_DELETE_INSTRUKTUR = "http://192.168.100.7/inixtraining/instruktur/tr_delete_instruktur.php?id_ins=";
+    public static final String URL_GET_ALL_INSTRUKTUR = "http://192.168.100.4/inixtraining/instruktur/tr_datas_instruktur.php";
+    public static final String URL_GET_DETAIL_INSTRUKTUR = "http://192.168.100.4/inixtraining/instruktur/tr_detail_instruktur.php?id_ins=";
+    public static final String URL_ADD_INSTRUKTUR = "http://192.168.100.4/inixtraining/instruktur/tr_add_instruktur.php";
+    public static final String URL_UPDATE_INSTRUKTUR = "http://192.168.100.4/inixtraining/instruktur/tr_update_instruktur.php?id_ins=";
+    public static final String URL_DELETE_INSTRUKTUR = "http://192.168.100.4/inixtraining/instruktur/tr_delete_instruktur.php?id_ins=";
 
     //MATERI
-    public static final String URL_GET_ALL_MATERI = "http://192.168.100.7/inixtraining/materi/tr_datas_materi.php";
-    public static final String URL_GET_DETAIL_MATERI = "http://192.168.100.7/inixtraining/materi/tr_detail_materi.php?id_mat=";
-    public static final String URL_ADD_MATERI = "http://192.168.100.7/inixtraining/materi/tr_add_materi.php";
-    public static final String URL_UPDATE_MATERI = "http://192.168.100.7/inixtraining/materi/tr_update_materi.php?id_mat=";
-    public static final String URL_DELETE_MATERI = "http://192.168.100.7/inixtraining/materi/tr_delete_materi.php?id_mat=";
+    public static final String URL_GET_ALL_MATERI = "http://192.168.100.4/inixtraining/materi/tr_datas_materi.php";
+    public static final String URL_GET_DETAIL_MATERI = "http://192.168.100.4/inixtraining/materi/tr_detail_materi.php?id_mat=";
+    public static final String URL_ADD_MATERI = "http://192.168.100.4/inixtraining/materi/tr_add_materi.php";
+    public static final String URL_UPDATE_MATERI = "http://192.168.100.4/inixtraining/materi/tr_update_materi.php?id_mat=";
+    public static final String URL_DELETE_MATERI = "http://1192.168.100.4/inixtraining/materi/tr_delete_materi.php?id_mat=";
 
     //KELAS
-    public static final String URL_GET_ALL_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_datas_kelas.php";
-    public static final String URL_GET_DETAIL_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_detail_kelas.php?id_kls=";
-    public static final String URL_ADD_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_add_kelas.php";
-    public static final String URL_UPDATE_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_update_kelas.php?id_kls=";
-    public static final String URL_DELETE_KELAS = "http://192.168.100.7/inixtraining/kelas/tr_delete_kelas.php?id_kls=";
+    public static final String URL_GET_ALL_KELAS = "http://192.168.100.4/inixtraining/kelas/tr_datas_kelas.php";
+    public static final String URL_GET_DETAIL_KELAS = "http://192.168.100.4/inixtraining/kelas/tr_detail_kelas.php?id_kls=";
+    public static final String URL_ADD_KELAS = "http://192.168.100.4/inixtraining/kelas/tr_add_kelas.php";
+    public static final String URL_UPDATE_KELAS = "http://192.168.100.4/inixtraining/kelas/tr_update_kelas.php?id_kls=";
+    public static final String URL_DELETE_KELAS = "http://192.168.100.4/inixtraining/kelas/tr_delete_kelas.php?id_kls=";
 
     //DETAIL KELAS
-    public static final String URL_GET_ALL_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_datas_detail_kelas.php";
-    public static final String URL_GET_DETAIL_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_detail_detail_kelas.php?id_detail_kls=";
-    public static final String URL_ADD_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_add_detail_kelas.php";
-    public static final String URL_UPDATE_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_update_detail_kelas.php?id_detail_kls=";
-    public static final String URL_DELETE_DTKELAS = "http://192.168.100.7/inixtraining/detail_kelas/tr_delete_detail_kelas.php?id_detail_kls=";
+    public static final String URL_GET_ALL_DTKELAS = "http://192.168.100.4/inixtraining/detail_kelas/tr_datas_detail_kelas.php";
+    public static final String URL_GET_DETAIL_DTKELAS = "http://192.168.100.4/inixtraining/detail_kelas/tr_detail_detail_kelas.php?id_detail_kls=";
+    public static final String URL_ADD_DTKELAS = "http://192.168.100.4/inixtraining/detail_kelas/tr_add_detail_kelas.php";
+    public static final String URL_UPDATE_DTKELAS = "http://192.168.100.4/inixtraining/detail_kelas/tr_update_detail_kelas.php?id_detail_kls=";
+    public static final String URL_DELETE_DTKELAS = "http://192.168.100.4/inixtraining/detail_kelas/tr_delete_detail_kelas.php?id_detail_kls=";
 
+    // SEARCH DATA
+    public static final String URL_SEARCH_PST = "http://192.168.100.4/inixtraining/search/search_info_pst.php?id_pst=";
+    public static final String URL_SEARCH_INS = "http://192.168.100.4/inixtraining/search/search_info_ins.php?id_ins=";
 
     // key and value JSON yang muncul di browser
     //PESERTA
@@ -104,6 +107,9 @@ public class Konfigurasi
     public static final String TAG_JSON_ID_DTKLS = "id_detail_kls";
     public static final String TAG_JSON_IDKLS_DTKLS = "id_kls";
     public static final String TAG_JSON_IDPST_DTKLS = "id_pst";
+    public static final String TAG_JSON_NAMAMAT_DTKLS = "nama_mat";
+    public static final String TAG_JSON_NAMAPST_DTKLS = "nama_pst";
+    public static final String TAG_JSON_JML_PST_DTKLS = "jum_pst";
 
     // variabel ID peserta
     public static final String PST_ID = "id_pst";

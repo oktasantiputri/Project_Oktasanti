@@ -2,13 +2,16 @@ package com.example.projectokta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -57,7 +60,34 @@ public class TambahPesertaActivity extends AppCompatActivity implements View.OnC
             {
                 tambah_instansi_peserta.setError("Masukan Asal Instansi Peserta");
             }
-            simpanPeserta();
+            else
+            {
+                String nama_pst = String.valueOf(tambah_nama_peserta.getText());
+                String email_pst = String.valueOf(tambah_email_peserta.getText());
+                String hp_pst = String.valueOf(tambah_hp_peserta.getText());
+                String instansi_pst = String.valueOf(tambah_instansi_peserta.getText());
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(TambahPesertaActivity.this);
+                builder.setTitle("Data Peserta");
+                builder.setMessage("Nama Peserta: " + nama_pst +
+                        "\nE-mail Peserta: " + email_pst +
+                        "\nNo.HP Peserta: " + hp_pst +
+                        "\nAsal Instansi: " + instansi_pst);
+                builder.setIcon(getResources().getDrawable(android.R.drawable.ic_dialog_info));
+                builder.setCancelable(false);
+                builder.setNegativeButton("Cancel",null);
+                builder.setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    { simpanPeserta(); }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                Toast.makeText(TambahPesertaActivity.this, "Data Berhasil Ditambahkan!",
+                        Toast.LENGTH_SHORT).show();
+            }
+
         }
 
     }

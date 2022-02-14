@@ -36,6 +36,11 @@
             android:id="@+id/nav_dtkelas"
             android:icon="@drawable/ic_dtkelas"
             android:title="Detail Kelas" />
+
+        <item
+            android:id="@+id/nav_caridata"
+            android:icon="@drawable/ic_searchdata"
+            android:title="Cari Data" />
     </group>
 
 </menu>

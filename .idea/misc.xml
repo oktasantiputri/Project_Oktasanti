@@ -14,6 +14,7 @@
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/activity_tambah_kelas.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/activity_tambah_materi.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/activity_tambah_peserta.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/fragment_cari_data.xml" value="0.1" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/fragment_detail_kelas.xml" value="0.2" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/fragment_home.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/fragment_instruktur.xml" value="0.1921875" />
@@ -26,6 +27,8 @@
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/list_detail_materi.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/list_detail_peserta.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/list_instruktur.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/list_item_search_ins.xml" value="0.1" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/list_item_search_pst.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/layout/navigation_header.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/ProjectOkta/app/src/main/res/menu/navigation_item.xml" value="0.1921875" />
       </map>

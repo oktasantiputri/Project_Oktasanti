@@ -39,6 +39,10 @@ public class DetailDTKelasActivity extends AppCompatActivity implements View.OnC
         btn_update_dtkelas.setOnClickListener(this);
         btn_del_dtkelas.setOnClickListener(this);
 
+        Intent terimaIntent = getIntent();
+        id_detail_kelas = terimaIntent.getStringExtra(Konfigurasi.DTKLS_ID);
+        edit_id_detail_kelas.setText(id_detail_kelas);
+
         getJSON();
     }
 
@@ -141,7 +145,7 @@ public class DetailDTKelasActivity extends AppCompatActivity implements View.OnC
             @Override
             protected String doInBackground(Void... voids) {
                 HttpHandler handler = new HttpHandler();
-                String hasil = handler.sendGetResponse(Konfigurasi.URL_DELETE_INSTRUKTUR,id_detail_kelas);
+                String hasil = handler.sendGetResponse(Konfigurasi.URL_DELETE_DTKELAS,id_detail_kelas);
                 return hasil;
             }
 

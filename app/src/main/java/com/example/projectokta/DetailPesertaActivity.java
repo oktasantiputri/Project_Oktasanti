@@ -160,7 +160,7 @@ public class DetailPesertaActivity extends AppCompatActivity implements View.OnC
             protected void onPostExecute(String message) {
                 super.onPostExecute(message);
                 loading.dismiss();
-                startActivity(new Intent(DetailPesertaActivity.this, MainActivity.class));
+                System.exit(1);
             }
         }
         DeleteDataPeserta deleteDataPeserta = new DeleteDataPeserta();
@@ -204,7 +204,7 @@ public class DetailPesertaActivity extends AppCompatActivity implements View.OnC
             protected void onPostExecute(String message) {
                 super.onPostExecute(message);
                 loading.dismiss();
-                startActivity(new Intent(DetailPesertaActivity.this, MainActivity.class));
+                System.exit(1);
             }
         }
         UpdateDataPeserta updateDataPeserta = new UpdateDataPeserta();

@@ -2,7 +2,9 @@ package com.example.projectokta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -33,8 +35,6 @@ public class TambahMateriActivity extends AppCompatActivity implements View.OnCl
         btn_lihat_materi.setOnClickListener(this);
         btn_simpan_materi.setOnClickListener(this);
 
-
-
     }
 
     @Override
@@ -42,7 +42,32 @@ public class TambahMateriActivity extends AppCompatActivity implements View.OnCl
     {
         if(view == btn_simpan_materi)
         {
-            simpanMateri();
+            if(tambah_nama_materi.getText().toString().length() == 0)
+            {
+                tambah_nama_materi.setError("Masukan Nama Materi!");
+            }
+            else
+            {
+                String nama_mat = String.valueOf(tambah_nama_materi.getText());
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(TambahMateriActivity.this);
+                builder.setTitle("Data Materi:");
+                builder.setMessage("Nama Instruktur: " + nama_mat);
+                builder.setIcon(getResources().getDrawable(android.R.drawable.ic_dialog_info));
+                builder.setCancelable(false);
+                builder.setNegativeButton("Cancel",null);
+                builder.setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    { simpanMateri(); }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                Toast.makeText(TambahMateriActivity.this, "Data Berhasil Ditambahkan!",
+                        Toast.LENGTH_SHORT).show();
+
+            }
         }
         else if(view == btn_lihat_materi)
         {

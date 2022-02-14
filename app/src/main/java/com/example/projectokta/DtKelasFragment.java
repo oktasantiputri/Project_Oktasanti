@@ -92,15 +92,13 @@ public class DtKelasFragment extends Fragment implements AdapterView.OnItemClick
             for (int i = 0; i < result.length(); i++)
             {
                 JSONObject object = result.getJSONObject(i);
-                String id_detail_kls = object.getString(Konfigurasi.TAG_JSON_ID_DTKLS);
                 String id_kls = object.getString(Konfigurasi.TAG_JSON_IDKLS_DTKLS);
-                String id_pst = object.getString(Konfigurasi.TAG_JSON_IDPST_DTKLS);
+                String jum_pst = object.getString(Konfigurasi.TAG_JSON_JML_PST_DTKLS);
 
 
                 HashMap<String, String> dtkelas = new HashMap<>();
-                dtkelas.put(Konfigurasi.TAG_JSON_ID_DTKLS, id_detail_kls);
                 dtkelas.put(Konfigurasi.TAG_JSON_IDKLS_DTKLS, id_kls);
-                dtkelas.put(Konfigurasi.TAG_JSON_IDPST_DTKLS, id_pst);
+                dtkelas.put(Konfigurasi.TAG_JSON_JML_PST_DTKLS, jum_pst);
                 list.add(dtkelas);
             }
         }
@@ -109,14 +107,19 @@ public class DtKelasFragment extends Fragment implements AdapterView.OnItemClick
             e.printStackTrace();
         }
         ListAdapter adapterDtKls = new SimpleAdapter(getActivity(), list, R.layout.list_detail_dtkelas,
-                new String[]{Konfigurasi.TAG_JSON_ID_DTKLS, Konfigurasi.TAG_JSON_IDKLS_DTKLS},
-                new int[]{R.id.txt_dis_id_dtkls, R.id.txt_dis_idkls_dtkls});
+                new String[]{Konfigurasi.TAG_JSON_IDKLS_DTKLS, Konfigurasi.TAG_JSON_JML_PST_DTKLS},
+                new int[]{R.id.txt_dis_idkls_dtkls, R.id.txt_jml_pst_dtkls});
         listViewDetailKelas.setAdapter(adapterDtKls);
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+    {
+        Intent intent = new Intent(getActivity(), DetailDTKelasActivity.class);
+        HashMap<String, String> map = (HashMap) parent.getItemAtPosition(position);
+        String dtklsId = map.get(Konfigurasi.TAG_JSON_ID_DTKLS).toString();
+        intent.putExtra(Konfigurasi.DTKLS_ID, dtklsId);
+        startActivity(intent);
     }
 
     @Override

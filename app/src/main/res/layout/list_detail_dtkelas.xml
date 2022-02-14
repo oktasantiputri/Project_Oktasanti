@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/txt_dis_id_dtkls"
+        android:id="@+id/txt_dis_idkls_dtkls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -16,7 +16,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txt_dis_idkls_dtkls"
+        android:id="@+id/txt_jml_pst_dtkls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

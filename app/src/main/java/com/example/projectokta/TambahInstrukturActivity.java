@@ -2,7 +2,9 @@ package com.example.projectokta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -40,7 +42,43 @@ public class TambahInstrukturActivity extends AppCompatActivity implements View.
     {
         if(view == btn_simpan_instruktur)
         {
-            simpanDataInstruktur();
+            if(txt_tambah_nama_instruktur.getText().toString().length() == 0)
+            {
+                txt_tambah_nama_instruktur.setError("Masukan Nama Instruktur!");
+            }
+            else if(txt_tambah_email_instruktur.getText().toString().length() == 0)
+            {
+                txt_tambah_email_instruktur.setError("Mauskan E-mail Instruktur!");
+            }
+            else if(txt_tambah_hp_instruktur.getText().toString().length() == 0)
+            {
+                txt_tambah_hp_instruktur.setError("Masukan Nomor HP Instruktur!");
+            }
+            else
+            {
+                String nama_ins = String.valueOf(txt_tambah_nama_instruktur.getText());
+                String email_ins = String.valueOf(txt_tambah_email_instruktur.getText());
+                String hp_ins = String.valueOf(txt_tambah_hp_instruktur.getText());
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(TambahInstrukturActivity.this);
+                builder.setTitle("Data Instruktur");
+                builder.setMessage("Nama Instruktur: " + nama_ins +
+                        "\nE-mail Instruktur: " + email_ins +
+                        "\nNo.HP Instruktur: " + hp_ins);
+                builder.setIcon(getResources().getDrawable(android.R.drawable.ic_dialog_info));
+                builder.setCancelable(false);
+                builder.setNegativeButton("Cancel",null);
+                builder.setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    { simpanDataInstruktur(); }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                Toast.makeText(TambahInstrukturActivity.this, "Data Berhasil Ditambahkan!",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
         else if (view == btn_lihat_instruktur)
         {

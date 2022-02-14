@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">drawer</string>
     <string name="close">drawer</string>
+
+    <string-array name="search_query">
+        <item></item>
+        <item>1 Informasi Peserta</item>
+        <item>2 Informasi Instruktur</item>
+        <item>3 Informasi Kelas</item>
+    </string-array>
 </resources>
